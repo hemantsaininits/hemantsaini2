@@ -1,30 +1,17 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowUpRight, Mail, Linkedin, Twitter, Calendar, Minus } from 'lucide-react';
+import { ArrowUpRight, Mail, Linkedin, Calendar, Minus } from 'lucide-react';
 import './App.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const clients = [
-  { name: 'CrossIndia Cruises', logo: '/logos/crossindia.png', industry: 'Travel' },
-  { name: 'Braintechh Engineers', logo: '/logos/braintechh.png', industry: 'Industrial' },
-  { name: 'Abhay Bharadwaj Law', logo: '/logos/abhaylaw.png', industry: 'Legal' },
-  { name: 'Nirmal CA Firm', logo: '/logos/nirmalca.png', industry: 'Finance' },
-  { name: 'TricityHome', logo: '/logos/tricityhome.png', industry: 'Real Estate' },
-  { name: 'Adhyatma', logo: '/logos/adhyatma.png', industry: 'Spiritual' },
-  { name: 'Wardaa', logo: '/logos/wardaa.png', industry: 'Retail' },
-  { name: 'Avenue Nails', logo: '/logos/avenue.png', industry: 'Wellness' },
-  { name: 'Shreya Vision Care', logo: '/logos/shreya.png', industry: 'Healthcare' },
-  { name: 'Compassionate Community', logo: '/logos/nonprofit.png', industry: 'Nonprofit' },
-  { name: 'QuickBite QR', logo: '/logos/quickbite.png', industry: 'Food Tech' },
-  { name: 'Travel Tours', logo: '/logos/travel.png', industry: 'Travel' },
-];
+
 
 function App() {
   const heroRef = useRef<HTMLDivElement>(null);
   const shapedRef = useRef<HTMLDivElement>(null);
-  const clientsRef = useRef<HTMLDivElement>(null);
+
   const thinkRef = useRef<HTMLDivElement>(null);
   const workRef = useRef<HTMLDivElement>(null);
   const partnerRef = useRef<HTMLDivElement>(null);
@@ -34,31 +21,31 @@ function App() {
     const ctx = gsap.context(() => {
       // Hero entrance animation
       const heroTl = gsap.timeline({ delay: 0.3 });
-      
-      heroTl.fromTo('.hero-line', 
+
+      heroTl.fromTo('.hero-line',
         { y: 60, opacity: 0 },
         { y: 0, opacity: 1, duration: 1, stagger: 0.15, ease: 'power3.out' }
       )
-      .fromTo('.hero-subtitle',
-        { y: 30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8, ease: 'power2.out' },
-        '-=0.4'
-      )
-      .fromTo('.hero-cta',
-        { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.6, ease: 'power2.out' },
-        '-=0.3'
-      )
-      .fromTo('.hero-profile',
-        { scale: 0.9, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 1, ease: 'power2.out' },
-        '-=0.8'
-      );
+        .fromTo('.hero-subtitle',
+          { y: 30, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.8, ease: 'power2.out' },
+          '-=0.4'
+        )
+        .fromTo('.hero-cta',
+          { y: 20, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.6, ease: 'power2.out' },
+          '-=0.3'
+        )
+        .fromTo('.hero-profile',
+          { scale: 0.9, opacity: 0 },
+          { scale: 1, opacity: 1, duration: 1, ease: 'power2.out' },
+          '-=0.8'
+        );
 
       // Section reveals
       const sections = [
         { ref: shapedRef, selector: '.shaped-' },
-        { ref: clientsRef, selector: '.clients-' },
+
         { ref: thinkRef, selector: '.think-' },
         { ref: workRef, selector: '.work-' },
         { ref: partnerRef, selector: '.partner-' },
@@ -83,23 +70,7 @@ function App() {
         }
       });
 
-      // Client logos stagger
-      if (clientsRef.current) {
-        gsap.fromTo('.client-logo',
-          { y: 30, opacity: 0 },
-          {
-            y: 0, opacity: 1,
-            duration: 0.5,
-            stagger: 0.05,
-            ease: 'power2.out',
-            scrollTrigger: {
-              trigger: clientsRef.current,
-              start: 'top 70%',
-              toggleActions: 'play none none reverse'
-            }
-          }
-        );
-      }
+
 
       // Contact section
       if (contactRef.current) {
@@ -150,7 +121,7 @@ function App() {
             {/* Left Content */}
             <div>
               <div className="micro-label mb-8 hero-line opacity-0">I Didn't Come Here to Sell Services</div>
-              
+
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight tracking-tight mb-8">
                 <span className="hero-line block opacity-0">I came into this space</span>
                 <span className="hero-line block opacity-0">because I kept seeing</span>
@@ -175,9 +146,9 @@ function App() {
             <div className="hero-profile relative flex justify-center lg:justify-end opacity-0">
               <div className="relative">
                 <div className="w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border border-white/10">
-                  <img 
-                    src="/upwork_profile_250x250.png" 
-                    alt="Hemant Saini" 
+                  <img
+                    src="/upwork_profile_250x250.png"
+                    alt="Hemant Saini, Founder of Apparotech Innovation"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -194,7 +165,7 @@ function App() {
       <section ref={shapedRef} className="py-24 lg:py-32 px-6 lg:px-12 border-t border-white/5">
         <div className="max-w-4xl mx-auto">
           <div className="micro-label mb-6 shaped-reveal opacity-0">What Shaped How I Work</div>
-          
+
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight mb-10 shaped-reveal opacity-0">
             Over the years, I've worked with <span className="text-orange-500">12+ companies</span> across wildly different contexts.
           </h2>
@@ -221,41 +192,13 @@ function App() {
         </div>
       </section>
 
-      {/* Section 3: Client Logos */}
-      <section ref={clientsRef} className="py-20 lg:py-28 px-6 lg:px-12 border-t border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="micro-label mb-4 clients-reveal opacity-0">Trusted By</div>
-            <h2 className="text-2xl sm:text-3xl font-semibold clients-reveal opacity-0">
-              Companies I've had the privilege to work with
-            </h2>
-          </div>
 
-          <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-8 lg:gap-12">
-            {clients.map((client, i) => (
-              <div 
-                key={i} 
-                className="client-logo group flex flex-col items-center gap-3 opacity-0"
-              >
-                <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center p-3 transition-all duration-300 group-hover:bg-white/10 group-hover:border-white/20">
-                  <img 
-                    src={client.logo} 
-                    alt={client.name}
-                    className="w-full h-full object-contain opacity-60 group-hover:opacity-100 transition-opacity"
-                  />
-                </div>
-                <span className="text-xs text-white/40 text-center leading-tight">{client.name}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Section 4: How I Think About Building */}
       <section ref={thinkRef} className="py-24 lg:py-32 px-6 lg:px-12 border-t border-white/5">
         <div className="max-w-4xl mx-auto">
           <div className="micro-label mb-6 think-reveal opacity-0">How I Think About Building</div>
-          
+
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight mb-12 think-reveal opacity-0">
             I don't believe in over-engineering, vanity features, or vague roadmaps.
           </h2>
@@ -296,7 +239,7 @@ function App() {
       <section ref={partnerRef} className="py-24 lg:py-32 px-6 lg:px-12 border-t border-white/5">
         <div className="max-w-4xl mx-auto">
           <div className="micro-label mb-6 partner-reveal opacity-0">Who I Work Best With</div>
-          
+
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight mb-12 partner-reveal opacity-0">
             Founders and teams who value:
           </h2>
@@ -367,11 +310,8 @@ function App() {
               </div>
 
               <div className="flex gap-3 mt-10 contact-reveal opacity-0">
-                <a href="#" className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
+                <a href="https://www.linkedin.com/in/hemant-saini-45359623a/" className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
                   <Linkedin className="w-5 h-5" />
-                </a>
-                <a href="#" className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
-                  <Twitter className="w-5 h-5" />
                 </a>
               </div>
             </div>
@@ -381,31 +321,31 @@ function App() {
               <form className="card-dark p-8 space-y-5">
                 <div>
                   <label className="block text-sm text-white/50 mb-2">Name</label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     className="w-full px-4 py-3 bg-white/5 rounded-lg text-white placeholder-white/30 border border-white/10 focus:border-orange-500/50 focus:outline-none transition-colors"
                     placeholder="Your name"
                   />
                 </div>
                 <div>
                   <label className="block text-sm text-white/50 mb-2">Email</label>
-                  <input 
-                    type="email" 
+                  <input
+                    type="email"
                     className="w-full px-4 py-3 bg-white/5 rounded-lg text-white placeholder-white/30 border border-white/10 focus:border-orange-500/50 focus:outline-none transition-colors"
                     placeholder="you@company.com"
                   />
                 </div>
                 <div>
                   <label className="block text-sm text-white/50 mb-2">Company</label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     className="w-full px-4 py-3 bg-white/5 rounded-lg text-white placeholder-white/30 border border-white/10 focus:border-orange-500/50 focus:outline-none transition-colors"
                     placeholder="Your company"
                   />
                 </div>
                 <div>
                   <label className="block text-sm text-white/50 mb-2">Message</label>
-                  <textarea 
+                  <textarea
                     rows={4}
                     className="w-full px-4 py-3 bg-white/5 rounded-lg text-white placeholder-white/30 border border-white/10 focus:border-orange-500/50 focus:outline-none transition-colors resize-none"
                     placeholder="Tell me about your project..."
