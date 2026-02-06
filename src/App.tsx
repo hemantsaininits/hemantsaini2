@@ -128,6 +128,22 @@ function App() {
                 <span className="hero-line block opacity-0">the same pattern:</span>
               </h1>
 
+              {/* Mobile Profile Image */}
+              <div className="lg:hidden flex justify-center mb-10 hero-profile opacity-0">
+                <div className="relative">
+                  <div className="w-48 h-48 rounded-full overflow-hidden border border-white/10">
+                    <img
+                      src="/upwork_profile_250x250.png"
+                      alt="Hemant Saini, Founder of Apparotech Innovation"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  {/* Decorative ring */}
+                  <div className="absolute -inset-4 rounded-full border border-white/5 pointer-events-none" />
+                  <div className="absolute -inset-8 rounded-full border border-white/[0.03] pointer-events-none" />
+                </div>
+              </div>
+
               <p className="hero-subtitle text-lg lg:text-xl text-white/60 leading-relaxed max-w-xl mb-10 opacity-0">
                 Businesses pouring time and money into technology that looked impressive on the surface but quietly failed where it actually mattered—<span className="text-white">adoption, operations, trust.</span>
               </p>
@@ -142,8 +158,8 @@ function App() {
               </div>
             </div>
 
-            {/* Right Profile */}
-            <div className="hero-profile relative flex justify-center lg:justify-end opacity-0">
+            {/* Right Profile (Desktop Only) */}
+            <div className="hidden lg:flex hero-profile relative justify-end opacity-0">
               <div className="relative">
                 <div className="w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border border-white/10">
                   <img
