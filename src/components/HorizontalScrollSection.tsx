@@ -59,10 +59,10 @@ export const HorizontalScrollSection = () => {
     return (
         <section ref={sectionRef} className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-12 border-t border-white/5 bg-[#0a0a0c]">
             <div className="max-w-7xl mx-auto">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-12 scroll-card-reveal opacity-0">
-                    <div>
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 scroll-card-reveal opacity-0">
+                    <div className="max-w-2xl">
                         <div className="micro-label mb-6">The Roadmap</div>
-                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight">
+                        <h2 className="text-2xl sm:text-4xl lg:text-5xl font-semibold leading-tight">
                             Let's Start With <span className="text-orange-500">0</span>
                         </h2>
                     </div>
@@ -80,7 +80,7 @@ export const HorizontalScrollSection = () => {
                 <div className="overflow-hidden -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-0 lg:px-0 scroll-card-reveal opacity-0" ref={emblaRef}>
                     <div className="flex gap-4 sm:gap-6">
                         {cards.map((card) => (
-                            <div key={card.id} className="flex-[0_0_88%] sm:flex-[0_0_45%] lg:flex-[0_0_32%] min-w-0">
+                            <div key={card.id} className="flex-[0_0_84%] sm:flex-[0_0_45%] lg:flex-[0_0_32%] min-w-0">
                                 {card.id === 1 ? (
                                     <Link to="/essentials" className="h-full block">
                                         <div className="h-full bg-white/5 border border-white/5 p-6 sm:p-8 rounded-2xl hover:border-white/10 transition-colors flex flex-col group cursor-pointer hover:bg-white/10 touch-manipulation">

@@ -66,7 +66,7 @@ export const Header = () => {
             </div>
 
             {/* Mobile menu */}
-            <div className="flex md:hidden items-center gap-2 sm:gap-3 shrink-0">
+            <div className="flex md:hidden items-center gap-3 shrink-0">
                 <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
                     <SheetTrigger asChild>
                         <button
@@ -91,21 +91,17 @@ export const Header = () => {
                         </div>
                     </SheetContent>
                 </Sheet>
+            </div>
+
+            {/* Desktop CTA */}
+            <div className="hidden md:block">
                 <button
                     onClick={() => scrollToSection('contact')}
-                    className="btn-primary text-sm px-3 sm:px-4 py-2 touch-manipulation"
+                    className="btn-primary text-sm"
                 >
                     Book a call
                 </button>
             </div>
-
-            {/* Desktop CTA */}
-            <button
-                onClick={() => scrollToSection('contact')}
-                className="hidden md:inline-flex btn-primary text-sm"
-            >
-                Book a call
-            </button>
         </nav>
     );
 };

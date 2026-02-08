@@ -238,7 +238,7 @@ const BusinessEssentials = () => {
 
                 <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center mb-16">
                     <a
-                        href="/hemantsainipov2.pdf"
+                        href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/hemantsainipov2.pdf`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 bg-orange-600 text-white px-8 py-4 rounded-full font-bold hover:bg-orange-700 transition-all transform hover:scale-105 shadow-lg shadow-orange-900/20"

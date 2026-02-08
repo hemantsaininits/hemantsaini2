@@ -107,8 +107,8 @@ export const Home = () => {
                 <div className="w-full max-w-7xl mx-auto">
                     <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                         {/* Left Content */}
-                        <div>
-                            <div className="micro-label mb-8 hero-line opacity-0">I Didn't Come Here to Sell Services</div>
+                        <div className="text-center lg:text-left">
+                            <div className="micro-label mb-8 hero-line opacity-0 mx-auto lg:mx-0">I Didn't Come Here to Sell Services</div>
 
                             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold leading-tight tracking-tight mb-6 sm:mb-8">
                                 <span className="hero-line block opacity-0">I came into this space</span>
@@ -132,18 +132,18 @@ export const Home = () => {
                                 </div>
                             </div>
 
-                            <p className="hero-subtitle text-lg lg:text-xl text-white/60 leading-relaxed max-w-xl mb-10 opacity-0">
+                            <p className="hero-subtitle text-lg lg:text-xl text-white/60 leading-relaxed max-w-xl mb-10 opacity-0 mx-auto lg:mx-0">
                                 Businesses pouring time and money into technology that looked impressive on the surface but quietly failed where it actually mattered—<span className="text-white">adoption, operations, trust.</span>
                             </p>
 
-                            <div className="hero-cta flex flex-wrap gap-4 opacity-0">
-                                <button onClick={scrollToContact} className="btn-primary">
+                            <div className="hero-cta flex flex-col sm:flex-row gap-4 opacity-0 justify-center lg:justify-start">
+                                <button onClick={scrollToContact} className="btn-primary w-full sm:w-auto">
                                     Let's talk <ArrowUpRight className="w-4 h-4" />
                                 </button>
                                 <button onClick={() => {
                                     const element = document.getElementById('experience');
                                     if (element) element.scrollIntoView({ behavior: 'smooth' });
-                                }} className="btn-outline">
+                                }} className="btn-outline w-full sm:w-auto">
                                     Read more
                                 </button>
                             </div>
@@ -295,7 +295,7 @@ export const Home = () => {
                         {/* Left Info */}
                         <div>
                             <div className="micro-label mb-6 contact-reveal opacity-0">Get in Touch</div>
-                            <h2 className="text-3xl sm:text-4xl font-semibold leading-tight mb-6 contact-reveal opacity-0">
+                            <h2 className="text-2xl sm:text-4xl font-semibold leading-tight mb-6 contact-reveal opacity-0">
                                 Let's talk about what you're building.
                             </h2>
                             <p className="text-lg text-white/60 mb-10 contact-reveal opacity-0">
