@@ -104,6 +104,7 @@ function App() {
       <nav className="fixed top-0 left-0 right-0 z-50 px-6 lg:px-12 py-5 flex items-center justify-between bg-[#0a0a0c]/80 backdrop-blur-md border-b border-white/5">
         <div className="text-lg font-semibold tracking-tight">Hemant Saini</div>
         <div className="hidden md:flex items-center gap-8">
+          <a href="/about-hemant-saini/" className="text-sm text-white/50 hover:text-white transition-colors">About</a>
           <button onClick={() => scrollToSection(shapedRef)} className="text-sm text-white/50 hover:text-white transition-colors">Experience</button>
           <button onClick={() => scrollToSection(thinkRef)} className="text-sm text-white/50 hover:text-white transition-colors">Philosophy</button>
           <button onClick={() => scrollToSection(partnerRef)} className="text-sm text-white/50 hover:text-white transition-colors">Partnership</button>
@@ -295,7 +296,7 @@ function App() {
       </section>
 
       {/* Section 7: Contact */}
-      <section ref={contactRef} className="py-24 lg:py-32 px-6 lg:px-12 border-t border-white/5">
+      <section id="contact" ref={contactRef} className="py-24 lg:py-32 px-6 lg:px-12 border-t border-white/5">
         <div className="max-w-4xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
             {/* Left Info */}
@@ -383,6 +384,7 @@ function App() {
             © 2026 Hemant Saini. All rights reserved.
           </div>
           <div className="flex gap-6 text-sm text-white/40">
+            <a href="/about-hemant-saini/" className="hover:text-white transition-colors">About Hemant Saini</a>
             <span>Apparotech Innovation</span>
           </div>
         </div>
