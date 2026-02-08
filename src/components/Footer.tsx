@@ -13,6 +13,9 @@ export const Footer = () => {
                     <Link to="/blog" className="px-3 py-1 text-xs bg-white/5 hover:bg-white/10 rounded-full transition-colors text-white/60 hover:text-white">
                         Blog
                     </Link>
+                    <Link to="/insights" className="px-3 py-1 text-xs bg-white/5 hover:bg-white/10 rounded-full transition-colors text-white/60 hover:text-white">
+                        Business Insights
+                    </Link>
                 </div>
             </div>
         </footer>
