@@ -1,9 +1,11 @@
+
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowUpRight, Mail, Linkedin, Calendar, Minus } from 'lucide-react';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
+import { HorizontalScrollSection } from '../components/HorizontalScrollSection';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -101,14 +103,14 @@ export const Home = () => {
             <Header />
 
             {/* Section 1: Hero - Manifesto */}
-            <section ref={heroRef} className="min-h-screen flex items-center pt-20 px-6 lg:px-12">
+            <section ref={heroRef} className="min-h-screen flex items-center pt-24 sm:pt-20 px-4 sm:px-6 lg:px-12">
                 <div className="w-full max-w-7xl mx-auto">
                     <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                         {/* Left Content */}
                         <div>
                             <div className="micro-label mb-8 hero-line opacity-0">I Didn't Come Here to Sell Services</div>
 
-                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight tracking-tight mb-8">
+                            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold leading-tight tracking-tight mb-6 sm:mb-8">
                                 <span className="hero-line block opacity-0">I came into this space</span>
                                 <span className="hero-line block opacity-0">because I kept seeing</span>
                                 <span className="hero-line block opacity-0">the same pattern:</span>
@@ -167,7 +169,7 @@ export const Home = () => {
             </section>
 
             {/* Section 2: What Shaped How I Work */}
-            <section ref={shapedRef} id="experience" className="py-24 lg:py-32 px-6 lg:px-12 border-t border-white/5">
+            <section ref={shapedRef} id="experience" className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-12 border-t border-white/5">
                 <div className="max-w-4xl mx-auto">
                     <div className="micro-label mb-6 shaped-reveal opacity-0">What Shaped How I Work</div>
 
@@ -200,7 +202,7 @@ export const Home = () => {
 
 
             {/* Section 4: How I Think About Building */}
-            <section ref={thinkRef} id="philosophy" className="py-24 lg:py-32 px-6 lg:px-12 border-t border-white/5">
+            <section ref={thinkRef} id="philosophy" className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-12 border-t border-white/5">
                 <div className="max-w-4xl mx-auto">
                     <div className="micro-label mb-6 think-reveal opacity-0">How I Think About Building</div>
 
@@ -241,7 +243,7 @@ export const Home = () => {
             </section>
 
             {/* Section 5: Who I Work Best With */}
-            <section ref={partnerRef} id="partnership" className="py-24 lg:py-32 px-6 lg:px-12 border-t border-white/5">
+            <section ref={partnerRef} id="partnership" className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-12 border-t border-white/5">
                 <div className="max-w-4xl mx-auto">
                     <div className="micro-label mb-6 partner-reveal opacity-0">Who I Work Best With</div>
 
@@ -249,7 +251,7 @@ export const Home = () => {
                         Founders and teams who value:
                     </h2>
 
-                    <div className="grid sm:grid-cols-3 gap-8 mb-16">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
                         {[
                             { title: 'Honesty', subtitle: 'over hype' },
                             { title: 'Long-term thinking', subtitle: 'over shortcuts' },
@@ -271,22 +273,25 @@ export const Home = () => {
             </section>
 
             {/* Section 6: Closing Statement */}
-            <section className="py-24 lg:py-32 px-6 lg:px-12 border-t border-white/5">
+            <section className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-12 border-t border-white/5">
                 <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight mb-6">
+                    <h2 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold leading-tight mb-4 sm:mb-6">
                         This Isn't About<br />
                         <span className="text-white/40">Building More Software</span>
                     </h2>
-                    <p className="text-2xl lg:text-3xl text-orange-500 font-medium">
+                    <p className="text-lg sm:text-2xl lg:text-3xl text-orange-500 font-medium">
                         It's about building systems that last.
                     </p>
                 </div>
             </section>
 
-            {/* Section 7: Contact */}
-            <section id="contact" ref={contactRef} className="py-24 lg:py-32 px-6 lg:px-12 border-t border-white/5">
+            {/* Section 7: Let's Start With 0 */}
+            <HorizontalScrollSection />
+
+            {/* Section 8: Contact */}
+            <section id="contact" ref={contactRef} className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-12 border-t border-white/5">
                 <div className="max-w-4xl mx-auto">
-                    <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+                    <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-20">
                         {/* Left Info */}
                         <div>
                             <div className="micro-label mb-6 contact-reveal opacity-0">Get in Touch</div>
@@ -298,11 +303,11 @@ export const Home = () => {
                             </p>
 
                             <div className="space-y-4">
-                                <div className="flex items-center gap-4 contact-reveal opacity-0">
-                                    <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center">
+                                <div className="flex items-start sm:items-center gap-4 contact-reveal opacity-0">
+                                    <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center shrink-0">
                                         <Mail className="w-5 h-5 text-orange-500" />
                                     </div>
-                                    <a href="mailto:hemant@apparotechinnovation.com" className="text-white/80 hover:text-white transition-colors">
+                                    <a href="mailto:hemant@apparotechinnovation.com" className="text-white/80 hover:text-white transition-colors break-all text-sm sm:text-base">
                                         hemant@apparotechinnovation.com
                                     </a>
                                 </div>
@@ -323,7 +328,7 @@ export const Home = () => {
 
                         {/* Right Form */}
                         <div className="contact-reveal opacity-0">
-                            <form className="card-dark p-8 space-y-5">
+                            <form className="card-dark p-6 sm:p-8 space-y-5">
                                 <div>
                                     <label className="block text-sm text-white/50 mb-2">Name</label>
                                     <input

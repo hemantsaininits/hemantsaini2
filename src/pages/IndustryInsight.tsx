@@ -18,13 +18,13 @@ const IndustryInsight = () => {
         <div className="relative bg-[#0a0a0c] text-white min-h-screen">
             <Header />
 
-            <div className="pt-32 pb-20 px-6 lg:px-12 max-w-4xl mx-auto">
+            <div className="pt-28 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-12 max-w-4xl mx-auto">
                 <Link to="/insights" className="inline-flex items-center gap-2 text-white/40 hover:text-white transition-colors mb-8 text-sm">
                     <ArrowLeft size={16} />
                     <span>Back to Insights</span>
                 </Link>
 
-                <h1 className="text-3xl sm:text-5xl font-semibold mb-6">{insight.title}</h1>
+                <h1 className="text-2xl sm:text-3xl lg:text-5xl font-semibold mb-4 sm:mb-6">{insight.title}</h1>
                 <p className="text-xl text-white/60 mb-12 border-l-2 border-orange-500 pl-6 py-1">
                     {insight.description}
                 </p>

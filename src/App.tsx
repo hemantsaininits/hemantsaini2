@@ -5,6 +5,9 @@ import './App.css';
 
 import BusinessInsights from './pages/BusinessInsights';
 import IndustryInsight from './pages/IndustryInsight';
+import BusinessEssentials from './pages/BusinessEssentials';
+import BusinessNextSteps from './pages/BusinessNextSteps';
+import BusinessStrategicMoves from './pages/BusinessStrategicMoves';
 
 function App() {
   return (
@@ -14,6 +17,9 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/insights" element={<BusinessInsights />} />
         <Route path="/insights/:slug" element={<IndustryInsight />} />
+        <Route path="/essentials" element={<BusinessEssentials />} />
+        <Route path="/next-steps" element={<BusinessNextSteps />} />
+        <Route path="/strategic-moves" element={<BusinessStrategicMoves />} />
       </Routes>
     </BrowserRouter>
   );

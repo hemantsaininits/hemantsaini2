@@ -6,8 +6,8 @@ const Blog = () => {
         <div className="relative bg-[#0a0a0c] text-white min-h-screen">
             <Header />
 
-            <div className="pt-32 pb-20 px-6 lg:px-12 max-w-4xl mx-auto">
-                <h1 className="text-4xl sm:text-5xl font-semibold mb-6">Thoughts & Insights</h1>
+            <div className="pt-28 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-12 max-w-4xl mx-auto">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4 sm:mb-6">Thoughts & Insights</h1>
                 <p className="text-xl text-white/60 mb-20">Lessons learned from building systems for 12+ companies across varying industries.</p>
 
                 <div className="space-y-32">

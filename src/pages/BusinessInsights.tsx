@@ -10,9 +10,9 @@ const BusinessInsights = () => {
         <div className="relative bg-[#0a0a0c] text-white min-h-screen">
             <Header />
 
-            <div className="pt-32 pb-20 px-6 lg:px-12 max-w-7xl mx-auto">
+            <div className="pt-28 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto">
                 <div className="max-w-3xl mb-16">
-                    <h1 className="text-4xl sm:text-5xl font-semibold mb-6">Business Insights</h1>
+                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4 sm:mb-6">Business Insights</h1>
                     <p className="text-xl text-white/60 mb-8">
                         Lessons learned from digital transformation across 10 diverse industries.
                         No theory, just field-tested observations on what works and what fails.
@@ -28,7 +28,7 @@ const BusinessInsights = () => {
                     </a>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                     {industryInsights.map((insight) => (
                         <Link
                             key={insight.id}

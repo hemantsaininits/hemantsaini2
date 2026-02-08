@@ -104,3 +104,11 @@ textarea:focus-visible {
     height: 200px;
   }
 }
+
+/* Touch-friendly tap targets on mobile */
+@media (max-width: 768px) {
+  .btn-primary,
+  .btn-outline {
+    min-height: 44px;
+  }
+}
