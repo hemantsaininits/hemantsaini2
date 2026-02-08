@@ -8,10 +8,12 @@ import IndustryInsight from './pages/IndustryInsight';
 import BusinessEssentials from './pages/BusinessEssentials';
 import BusinessNextSteps from './pages/BusinessNextSteps';
 import BusinessStrategicMoves from './pages/BusinessStrategicMoves';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blog" element={<Blog />} />
