@@ -7,50 +7,55 @@ import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const IndustryInsight = () => {
-    const { slug } = useParams<{ slug: string }>();
-    const insight = industryInsights.find(i => i.slug === slug);
+ const { slug } = useParams<{ slug: string }>();
+ const insight = industryInsights.find(i => i.slug === slug);
 
-    if (!insight) {
-        return <Navigate to="/insights" replace />;
-    }
+ if (!insight) {
+ return <Navigate to="/insights" replace />;
+ }
 
-    return (
-        <div className="relative bg-[#0a0a0c] text-white min-h-screen">
-            <Header />
+ return (
+ <div className="relative bg-background text-foreground min-h-screen">
+ <Header />
 
-            <div className="pt-28 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-12 max-w-4xl mx-auto">
-                <Link to="/insights" className="inline-flex items-center gap-2 text-white/40 hover:text-white transition-colors mb-8 text-sm">
-                    <ArrowLeft size={16} />
-                    <span>Back to Insights</span>
-                </Link>
+ <div className="pt-28 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-12 max-w-4xl mx-auto">
+ <Link to="/insights" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8 text-sm">
+ <ArrowLeft size={16} />
+ <span>Back to Insights</span>
+ </Link>
 
-                <h1 className="text-2xl sm:text-3xl lg:text-5xl font-semibold mb-4 sm:mb-6">{insight.title}</h1>
-                <p className="text-xl text-white/60 mb-12 border-l-2 border-orange-500 pl-6 py-1">
-                    {insight.description}
-                </p>
+ <h1 className="text-2xl sm:text-3xl lg:text-5xl font-semibold mb-4 sm:mb-6">{insight.title}</h1>
+ <p className="text-xl text-muted-foreground mb-12 border-l-2 border-slate-900 pl-6 py-1">
+ {insight.description}
+ </p>
 
-                <div
-                    className="prose prose-invert max-w-none text-white/80 leading-relaxed space-y-6 [&>h3]:text-xl [&>h3]:font-medium [&>h3]:text-white [&>h3]:mt-12 [&>h3]:mb-4 [&>ul]:list-disc [&>ul]:pl-5 [&>ul]:space-y-2 [&>ul]:mb-6"
-                    dangerouslySetInnerHTML={{ __html: insight.content as string }}
-                />
+ <div
+ className="prose prose max-w-none text-slate-700 leading-relaxed space-y-6 [&>h3]:text-xl [&>h3]:font-medium [&>h3]:text-foreground [&>h3]:mt-12 [&>h3]:mb-4 [&>ul]:list-disc [&>ul]:pl-5 [&>ul]:space-y-2 [&>ul]:mb-6"
+ dangerouslySetInnerHTML={{ __html: insight.content as string }}
+ />
 
-                <div className="mt-20 pt-8 border-t border-white/10">
-                    <h3 className="text-white font-medium mb-4">Interested in discussing this further?</h3>
-                    <p className="text-white/60 mb-6">
-                        I help founders and teams navigate these specific challenges.
-                    </p>
-                    <a
-                        href="mailto:hemant@apparotechinnovation.com"
-                        className="inline-block bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-gray-200 transition-colors"
-                    >
-                        Get in Touch
-                    </a>
-                </div>
-            </div>
+ <div className="mt-20 pt-8 border-t border-border">
+ <h3 className="font-medium mb-4">Interested in discussing this further?</h3>
+ <p className="text-muted-foreground mb-6">
+ I help founders and teams navigate these specific challenges.
+ </p>
+ <a
+ href="mailto:hemant@apparotechinnovation.com"
+ className="inline-block bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-gray-200 transition-colors"
+ >
+ Get in Touch
+ </a>
+ </div>
+ </div>
 
-            <Footer />
-        </div>
-    );
+ <Footer />
+ </div>
+ );
 };
 
 export default IndustryInsight;
+
+
+
+
+

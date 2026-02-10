@@ -17,14 +17,18 @@ export const Header = () => {
 
     const scrollToSection = (id: string) => {
         setMobileMenuOpen(false);
-        if (location.pathname !== '/') {
-            navigate(`/#${id}`);
-            return;
-        }
-        const element = document.getElementById(id);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
+
+        // Delay scroll to allow mobile menu closing animation and scroll-lock release
+        setTimeout(() => {
+            if (location.pathname !== '/') {
+                navigate(`/#${id}`);
+                return;
+            }
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }, 300);
     };
 
     useEffect(() => {
@@ -39,7 +43,7 @@ export const Header = () => {
         }
     }, [location]);
 
-    const navLinkClass = "text-sm text-white/50 hover:text-white transition-colors flex items-center";
+    const navLinkClass = "text-sm text-[#0CCEAF] hover:text-slate-600 transition-colors flex items-center font-medium uppercase tracking-wider";
     const navButtonClass = `${navLinkClass} w-full md:w-auto text-left md:inline`;
     const navLinks = (
         <>
@@ -54,53 +58,64 @@ export const Header = () => {
 
     return (
         <nav className={cn(
-            "fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 lg:px-12 py-4 sm:py-5 flex items-center justify-between gap-4",
-            "bg-[#0a0a0c]/80 backdrop-blur-md border-b border-white/5",
-            "pt-[calc(0.5rem+env(safe-area-inset-top,0px))]"
+            "absolute top-0 left-0 right-0 z-50 px-4 sm:px-6 lg:px-12 py-6 sm:py-8 flex items-center gap-6 lg:gap-10 transition-all duration-300",
+            "bg-transparent border-none",
+            "pt-[calc(1rem+env(safe-area-inset-top,0px))]"
         )}>
-            <Link to="/" className="text-base sm:text-lg font-semibold tracking-tight text-white shrink-0 min-w-0 truncate">Hemant Saini</Link>
+            {/* Mobile Logo - Only visible on small screens */}
+            <div className="flex md:hidden items-center">
+                <Link to="/">
+                    <img
+                        src="/logos/logo.png"
+                        alt="Logo"
+                        className="h-12 w-auto object-contain rounded-full"
+                    />
+                </Link>
+            </div>
 
-            {/* Desktop nav */}
+            {/* Desktop nav - All Aligned Left */}
             <div className="hidden md:flex items-center gap-6 lg:gap-8">
                 {navLinks}
             </div>
 
-            {/* Mobile menu */}
-            <div className="flex md:hidden items-center gap-3 shrink-0">
+            {/* Desktop CTA - Moved to Left after nav */}
+            <div className="hidden md:block">
+                <button
+                    onClick={() => scrollToSection('contact')}
+                    className="px-6 py-2 border-2 bg-[#0CCEAF] text-white font-bold uppercase tracking-wider rounded-md hover:bg-[#0CCEAF] hover:text-white transition-all duration-300 shadow-[0_0_10px_rgba(12,206,175,0.1)] text-xs"
+                >
+                    Book a call
+                </button>
+            </div>
+
+            {/* Mobile menu trigger - Still on right for usability */}
+            <div className="flex flex-1 md:hidden justify-end items-center gap-3 shrink-0">
                 <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
                     <SheetTrigger asChild>
                         <button
                             aria-label="Open menu"
-                            className="w-10 h-10 flex items-center justify-center rounded-lg border border-white/10 hover:bg-white/5 transition-colors touch-manipulation"
+                            className="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 text-slate-900 hover:bg-slate-50 transition-colors touch-manipulation"
                         >
                             <Menu className="w-5 h-5" />
                         </button>
                     </SheetTrigger>
-                    <SheetContent side="right" className="w-[min(300px,85vw)] bg-[#0a0a0c] border-white/10 text-white [&>button]:text-white [&>button]:hover:text-white/80">
-                        <SheetHeader className="border-b border-white/5 pb-6">
-                            <SheetTitle className="text-white font-semibold">Menu</SheetTitle>
+                    <SheetContent side="right" className="w-[min(300px,85vw)] bg-white border-slate-200 text-slate-900 [&>button]:text-slate-900">
+                        <SheetHeader className="border-b border-slate-100 pb-6">
+                            <SheetTitle className="text-slate-900 font-semibold">Menu</SheetTitle>
                         </SheetHeader>
-                        <div className="flex flex-col gap-4 pt-6">
-                            {navLinks}
+                        <div className="flex flex-col gap-6 pt-6 px-6">
+                            <div className="flex flex-col gap-2 pl-4 border-l border-slate-100">
+                                {navLinks}
+                            </div>
                             <button
                                 onClick={() => scrollToSection('contact')}
-                                className="btn-primary w-full justify-center mt-2"
+                                className="px-6 py-2 bg-[#0CCEAF] text-white font-bold uppercase tracking-wider rounded-md hover:bg-[#0bb9a1] transition-all duration-300 shadow-[0_0_15px_rgba(12,206,175,0.2)] w-full justify-center"
                             >
                                 Book a call
                             </button>
                         </div>
                     </SheetContent>
                 </Sheet>
-            </div>
-
-            {/* Desktop CTA */}
-            <div className="hidden md:block">
-                <button
-                    onClick={() => scrollToSection('contact')}
-                    className="btn-primary text-sm"
-                >
-                    Book a call
-                </button>
             </div>
         </nav>
     );
