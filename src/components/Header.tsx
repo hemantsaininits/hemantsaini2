@@ -58,9 +58,9 @@ export const Header = () => {
 
     return (
         <nav className={cn(
-            "absolute top-0 left-0 right-0 z-50 px-4 sm:px-6 lg:px-12 py-6 sm:py-8 flex items-center gap-6 lg:gap-10 transition-all duration-300",
+            "absolute top-0 left-0 right-0 z-50 px-3 sm:px-6 lg:px-12 py-2 sm:py-3 lg:py-8 flex items-center gap-2 sm:gap-4 lg:gap-10 transition-all duration-300",
             "bg-transparent border-none",
-            "pt-[calc(1rem+env(safe-area-inset-top,0px))]"
+            "pt-[calc(0.5rem+env(safe-area-inset-top,0px))]"
         )}>
             {/* Mobile Logo - Only visible on small screens */}
             <div className="flex md:hidden items-center">
@@ -68,7 +68,7 @@ export const Header = () => {
                     <img
                         src="/logos/logo.png"
                         alt="Logo"
-                        className="h-12 w-auto object-contain rounded-full"
+                        className="h-7 sm:h-9 w-auto object-contain rounded-full"
                     />
                 </Link>
             </div>
@@ -89,14 +89,14 @@ export const Header = () => {
             </div>
 
             {/* Mobile menu trigger - Still on right for usability */}
-            <div className="flex flex-1 md:hidden justify-end items-center gap-3 shrink-0">
+            <div className="flex flex-1 md:hidden justify-end items-center gap-2 shrink-0">
                 <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
                     <SheetTrigger asChild>
                         <button
                             aria-label="Open menu"
-                            className="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 text-slate-900 hover:bg-slate-50 transition-colors touch-manipulation"
+                            className="w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-lg border border-slate-200 text-slate-900 hover:bg-slate-50 transition-colors touch-manipulation"
                         >
-                            <Menu className="w-5 h-5" />
+                            <Menu className="w-4 h-4" />
                         </button>
                     </SheetTrigger>
                     <SheetContent side="right" className="w-[min(300px,85vw)] bg-white border-slate-200 text-slate-900 [&>button]:text-slate-900">

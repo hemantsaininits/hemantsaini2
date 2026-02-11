@@ -126,38 +126,77 @@ export const Home = () => {
             <Header />
 
             {/* Section 1: Hero - Manifesto */}
-            <section ref={heroRef} className="relative min-h-[100dvh] flex items-center bg-slate-50 overflow-hidden pt-20 lg:pt-0">
-                <div className="w-full h-full flex flex-col-reverse lg:flex-row">
-                    {/* Content Area (Appears below image on mobile, left on desktop) */}
-                    <div className="w-full lg:w-[55%] flex items-center px-6 sm:px-12 lg:pl-24 lg:pr-10 pb-24 pt-0 lg:py-0 relative z-20 -mt-20 lg:mt-0">
-                        <div className="max-w-2xl text-center lg:text-left mx-auto lg:mx-0">
-                            <div className="text-slate-600 text-sm sm:text-base font-medium mb-4 hero-line opacity-0">
-                                Hello , I'm
+            <section ref={heroRef} className="relative min-h-[100dvh] flex items-center justify-center bg-slate-50 overflow-hidden pt-10 sm:pt-12 lg:pt-0">
+                <div className="w-full h-full flex flex-col lg:flex-row">
+                    {/* Mobile Layout: Text → Photo → Text → Buttons */}
+                    <div className="w-full lg:w-[55%] flex items-center px-4 sm:px-6 lg:px-12 lg:pl-24 lg:pr-10 py-2 sm:py-4 lg:py-0 relative z-20">
+                        <div className="max-w-2xl text-center lg:text-left mx-auto lg:mx-0 w-full">
+                            {/* Text Above Photo (Mobile) */}
+                            <div className="lg:hidden mb-4">
+                                <div className="text-slate-600 text-xs sm:text-sm font-medium mb-1.5 hero-line opacity-0">
+                                    Hello , I'm
+                                </div>
+                                <h1 className="text-2xl sm:text-3xl font-black leading-tight tracking-tighter mb-2 text-[#0CCEAF] uppercase italic hero-line opacity-0">
+                                    Hemant Saini
+                                </h1>
+                                <div className="text-slate-900 text-base sm:text-lg font-bold hero-line opacity-0">
+                                    Founder of Apparotech Innovation
+                                </div>
                             </div>
 
-                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-none tracking-tighter mb-6 text-[#0CCEAF] uppercase italic">
-                                <span className="hero-line block opacity-0">Hemant Saini</span>
-                                {/* <span className="hero-line block opacity-0">Saini</span> */}
-                            </h1>
-
-                            <div className="text-slate-900 text-xl sm:text-2xl lg:text-3xl font-bold mb-10 hero-line opacity-0">
-                                Founder of Apparotech Innovation
+                            {/* Circular Photo (Mobile - Center) */}
+                            <div className="lg:hidden flex justify-center mb-4 hero-profile opacity-0">
+                                <div className="relative">
+                                    <div className="w-28 h-28 sm:w-36 sm:h-36 rounded-full overflow-hidden border-[3px] border-[#0CCEAF] shadow-xl ring-2 ring-[#0CCEAF]/20">
+                                        <img
+                                            src="/upwork_profile_250x250.png"
+                                            alt="Hemant Saini"
+                                            className="w-full h-full object-cover"
+                                        />
+                                    </div>
+                                </div>
                             </div>
 
-                            <div className="space-y-6 max-w-xl mb-12 mx-auto lg:mx-0">
-                                <p className="text-slate-700 text-lg sm:text-xl font-medium leading-tight hero-line opacity-0">
+                            {/* Text Below Photo (Mobile) */}
+                            <div className="lg:hidden space-y-3 mb-6">
+                                <p className="text-slate-700 text-sm sm:text-base font-medium leading-snug hero-line opacity-0">
                                     I came into this space because I kept seeing the same pattern:
                                 </p>
-
-                                <p className="hero-subtitle text-sm sm:text-base lg:text-lg text-slate-500 leading-relaxed opacity-0">
+                                <p className="hero-subtitle text-xs sm:text-sm text-slate-500 leading-relaxed opacity-0">
                                     Businesses pouring time and money into technology that looked impressive on the surface but quietly failed where it actually mattered—<span className="text-slate-700 font-medium underline decoration-[#0CCEAF]">adoption, operations, trust.</span>
                                 </p>
                             </div>
 
-                            <div className="hero-cta flex flex-wrap gap-4 justify-center lg:justify-start opacity-0">
+                            {/* Desktop Layout: Original Layout */}
+                            <div className="hidden lg:block">
+                                <div className="text-slate-600 text-sm sm:text-base font-medium mb-4 hero-line opacity-0">
+                                    Hello , I'm
+                                </div>
+
+                                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-none tracking-tighter mb-6 text-[#0CCEAF] uppercase italic">
+                                    <span className="hero-line block opacity-0">Hemant Saini</span>
+                                </h1>
+
+                                <div className="text-slate-900 text-xl sm:text-2xl lg:text-3xl font-bold mb-10 hero-line opacity-0">
+                                    Founder of Apparotech Innovation
+                                </div>
+
+                                <div className="space-y-6 max-w-xl mb-12 mx-auto lg:mx-0">
+                                    <p className="text-slate-700 text-lg sm:text-xl font-medium leading-tight hero-line opacity-0">
+                                        I came into this space because I kept seeing the same pattern:
+                                    </p>
+
+                                    <p className="hero-subtitle text-sm sm:text-base lg:text-lg text-slate-500 leading-relaxed opacity-0">
+                                        Businesses pouring time and money into technology that looked impressive on the surface but quietly failed where it actually mattered—<span className="text-slate-700 font-medium underline decoration-[#0CCEAF]">adoption, operations, trust.</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* CTA Buttons */}
+                            <div className="hero-cta flex flex-wrap gap-2.5 sm:gap-3 justify-center lg:justify-start opacity-0">
                                 <button
                                     onClick={scrollToContact}
-                                    className="px-8 py-3 bg-[#0CCEAF] text-white font-bold uppercase tracking-wider rounded-md hover:bg-[#0bb9a1] transition-all duration-300 shadow-[0_0_15px_rgba(12,206,175,0.2)] text-xs"
+                                    className="px-5 sm:px-7 py-2 sm:py-2.5 bg-[#0CCEAF] text-white font-bold uppercase tracking-wider rounded-md hover:bg-[#0bb9a1] transition-all duration-300 shadow-[0_0_15px_rgba(12,206,175,0.2)] text-xs sm:text-sm"
                                 >
                                     Let's talk
                                 </button>
@@ -166,16 +205,16 @@ export const Home = () => {
                                         const element = document.getElementById('experience');
                                         if (element) element.scrollIntoView({ behavior: 'smooth' });
                                     }}
-                                    className="px-8 py-3 border-2 border-[#0CCEAF] text-[#0CCEAF] font-bold uppercase tracking-wider rounded-md hover:bg-[#0CCEAF]/10 transition-all duration-300 text-xs flex items-center gap-2"
+                                    className="px-5 sm:px-7 py-2 sm:py-2.5 border-2 border-[#0CCEAF] text-[#0CCEAF] font-bold uppercase tracking-wider rounded-md hover:bg-[#0CCEAF]/10 transition-all duration-300 text-xs sm:text-sm flex items-center gap-1.5 sm:gap-2"
                                 >
-                                    Read more <ArrowUpRight className="w-4 h-4" />
+                                    Read more <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                                 </button>
                             </div>
                         </div>
                     </div>
 
-                    {/* Right Slanted Background + Image Container */}
-                    <div className="w-full lg:w-[45%] h-[60vh] sm:h-[50vh] lg:h-screen relative z-10 flex items-center justify-center hero-profile opacity-0">
+                    {/* Right Slanted Background + Image Container (Desktop Only) */}
+                    <div className="hidden lg:flex w-[45%] h-screen relative z-10 items-center justify-center hero-profile opacity-0">
                         <div className="absolute inset-0 bg-white overflow-hidden hero-slant">
                             {/* The Profile Image */}
                             <img
@@ -183,8 +222,6 @@ export const Home = () => {
                                 alt="Hemant Saini"
                                 className="w-full h-full object-cover object-top brightness-100 hover:grayscale-0 transition-all duration-1000 ease-out"
                             />
-                            {/* Bottom Gradient Overlay for Mobile - connects image to content */}
-                            <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-slate-50 via-slate-50/80 to-transparent lg:hidden" />
                         </div>
                     </div>
                 </div>

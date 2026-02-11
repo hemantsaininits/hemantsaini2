@@ -50,6 +50,10 @@
     body {
       overflow-x: hidden;
     }
+    /* Optimize hero section spacing on mobile */
+    section[class*="hero"] {
+      padding-top: 2.5rem !important;
+    }
   }
 
   h1,
