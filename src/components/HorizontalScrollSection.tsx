@@ -14,7 +14,7 @@ const cards = [
         label: "PHASE 01 / CORE",
         title: "10 Absolute Essentials Every Business Owner NEEDS",
         description: "Before growth, before scale, these are the non-negotiables that keep the lights on and the engine running.",
-        path: "/essentials"
+        path: "/essentials/detail"
     },
     {
         id: 2,
@@ -62,7 +62,7 @@ export const HorizontalScrollSection = () => {
     const scrollNext = () => emblaApi && emblaApi.scrollNext();
 
     return (
-        <section ref={sectionRef} className="py-16 lg:py-40 px-6 sm:px-12 lg:px-24 border-t border-border bg-white relative overflow-hidden">
+        <section ref={sectionRef} className="pt-16 lg:pt-40 pb-12 lg:pb-24 px-6 sm:px-12 lg:px-24 border-t border-border bg-white relative overflow-hidden">
             {/* Background Structural Grid Lines */}
             <div className="absolute top-0 left-1/2 w-px h-full bg-slate-50 hidden lg:block" />
             <div className="absolute top-0 left-1/4 w-px h-full bg-slate-50 hidden lg:block" />
@@ -137,6 +137,18 @@ export const HorizontalScrollSection = () => {
                             );
                         })}
                     </div>
+                </div>
+
+                {/* View More Button */}
+                <div className="mt-16 lg:mt-24 flex justify-center blueprint-reveal opacity-0">
+                    <Link
+                        to="/essentials"
+                        className="group relative flex items-center gap-4 px-10 py-5 bg-[#0CCEAF] hover:bg-slate-900 text-white rounded-xl transition-all duration-500 shadow-2xl hover:shadow-[#0CCEAF]/20 overflow-hidden"
+                    >
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                        <span className="text-[10px] lg:text-xs font-bold uppercase tracking-[0.3em] relative z-10">Explore More</span>
+                        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2 relative z-10" />
+                    </Link>
                 </div>
             </div>
         </section>
