@@ -10,6 +10,8 @@ import BusinessNextSteps from './pages/BusinessNextSteps';
 import BusinessStrategicMoves from './pages/BusinessStrategicMoves';
 import ScrollToTop from './components/ScrollToTop';
 
+import Roadmap from './pages/Roadmap';
+
 function App() {
   return (
     <BrowserRouter>
@@ -19,9 +21,11 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/insights" element={<BusinessInsights />} />
         <Route path="/insights/:slug" element={<IndustryInsight />} />
-        <Route path="/essentials" element={<BusinessEssentials />} />
+        <Route path="/essentials" element={<Roadmap />} />
+        <Route path="/essentials/detail" element={<BusinessEssentials />} />
         <Route path="/next-steps" element={<BusinessNextSteps />} />
         <Route path="/strategic-moves" element={<BusinessStrategicMoves />} />
+        {/* <Route path="/roadmap" element={<Roadmap />} /> */}
       </Routes>
     </BrowserRouter>
   );
