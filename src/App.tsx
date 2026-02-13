@@ -3,14 +3,14 @@ import { Home } from './pages/Home';
 import Blog from './pages/Blog';
 import './App.css';
 
-import BusinessInsights from '@/pages/BusinessInsights';
-import IndustryInsight from '@/pages/IndustryInsight';
-import BusinessEssentials from '@/pages/BusinessEssentials';
-import BusinessNextSteps from '@/pages/BusinessNextSteps';
-import BusinessStrategicMoves from '@/pages/BusinessStrategicMoves';
-import ScrollToTop from '@/components/ScrollToTop';
+import BusinessInsights from './pages/BusinessInsights';
+import IndustryInsight from './pages/IndustryInsight';
+import BusinessEssentials from './pages/BusinessEssentials';
+import BusinessNextSteps from './pages/BusinessNextSteps';
+import BusinessStrategicMoves from './pages/BusinessStrategicMoves';
+import ScrollToTop from './components/ScrollToTop';
 
-import Roadmap from '@/pages/Roadmap';
+import Roadmap from './pages/Roadmap';
 
 function App() {
   return (
